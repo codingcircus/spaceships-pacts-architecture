@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  pactbroker-db:
+    build: pactbroker-db/
+    volumes:
+      - ~/Sites/experiments/spaceships/data/postgresql:/var/lib/postgresql/data
+  pactbroker:
+    build: pactbroker/
+    links: [pactbroker-db:postgres]
+    ports:
+      - "9292:9292"
+  spaceships-service:
+    build: spaceships-service/
+    volumes:
+    - ~/Sites/experiments/spaceships/spaceships-service:/opt/spaceships-service/app
+  spaceships-viewer:
+    build: spaceships-viewer/
+    links: [spaceships-service]
+    volumes:
+    - ~/Sites/experiments/spaceships/spaceships-viewer:/opt/spaceships-viewer/app
+  spaceship-creator-app:
+    build: spaceship-creator-app/
+    links: [spaceships-service:spaceships-service]
+    volumes:
+    - ~/Sites/experiments/spaceships/spaceship-creator-app:/opt/spaceship-creator-app/app
