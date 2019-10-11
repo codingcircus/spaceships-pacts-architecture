@@ -1,0 +1,1 @@
+    data: spaceships.getPaginatedItems(req.query.itemsPerPage, req.query.page),
