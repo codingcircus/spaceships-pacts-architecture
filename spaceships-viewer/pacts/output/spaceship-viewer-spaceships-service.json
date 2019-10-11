@@ -1,0 +1,74 @@
+{
+  "consumer": {
+    "name": "spaceship-viewer"
+  },
+  "provider": {
+    "name": "spaceships-service"
+  },
+  "interactions": [
+    {
+      "description": "a request to get all spaceships",
+      "providerState": "there is a spaceship with id 1 in the database",
+      "request": {
+        "method": "GET",
+        "path": "/spaceships",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "itemsPerPage": 1,
+          "page": 1,
+          "totalItems": 1,
+          "items": [
+            {
+              "id": 1,
+              "name": "A spaceship",
+              "description": "Spaceship description",
+              "size": "small"
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body.itemsPerPage": {
+            "match": "type"
+          },
+          "$.body.page": {
+            "match": "type"
+          },
+          "$.body.totalItems": {
+            "match": "type"
+          },
+          "$.body.items": {
+            "min": 1
+          },
+          "$.body.items[*].*": {
+            "match": "type"
+          },
+          "$.body.items[*].id": {
+            "match": "type"
+          },
+          "$.body.items[*].name": {
+            "match": "type"
+          },
+          "$.body.items[*].description": {
+            "match": "type"
+          },
+          "$.body.items[*].size": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

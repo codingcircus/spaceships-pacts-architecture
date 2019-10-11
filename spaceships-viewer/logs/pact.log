@@ -1,0 +1,115 @@
+I, [2019-10-10T19:37:48.337182 #8614]  INFO -- : Registered expected interaction GET /spaceships
+D, [2019-10-10T19:37:48.337721 #8614] DEBUG -- : {
+  "description": "a request to get all spaceships",
+  "providerState": "there is a spaceship with id 1 in the database",
+  "request": {
+    "method": "GET",
+    "path": "/spaceships",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "itemsPerPage": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      },
+      "page": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      },
+      "totalItems": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      },
+      "items": {
+        "json_class": "Pact::ArrayLike",
+        "contents": {
+          "id": {
+            "json_class": "Pact::SomethingLike",
+            "contents": 1
+          },
+          "name": {
+            "json_class": "Pact::SomethingLike",
+            "contents": "A spaceship"
+          },
+          "description": {
+            "json_class": "Pact::SomethingLike",
+            "contents": "Spaceship description"
+          },
+          "size": {
+            "json_class": "Pact::SomethingLike",
+            "contents": "small"
+          }
+        },
+        "min": 1
+      }
+    }
+  }
+}
+I, [2019-10-10T19:37:48.345971 #8614]  INFO -- : Received request GET /spaceships
+D, [2019-10-10T19:37:48.346122 #8614] DEBUG -- : {
+  "path": "/spaceships",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2019-10-10T19:37:48.346561 #8614]  INFO -- : Found matching response for GET /spaceships
+D, [2019-10-10T19:37:48.346840 #8614] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "itemsPerPage": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 1
+    },
+    "page": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 1
+    },
+    "totalItems": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 1
+    },
+    "items": {
+      "json_class": "Pact::ArrayLike",
+      "contents": {
+        "id": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 1
+        },
+        "name": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "A spaceship"
+        },
+        "description": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "Spaceship description"
+        },
+        "size": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "small"
+        }
+      },
+      "min": 1
+    }
+  }
+}
+I, [2019-10-10T19:37:48.358784 #8614]  INFO -- : Verifying - interactions matched
+I, [2019-10-10T19:37:48.366135 #8614]  INFO -- : Cleared interactions
+I, [2019-10-10T19:37:48.372437 #8614]  INFO -- : Writing pact for spaceships-service to /Users/danielstein/Sites/experiments/spaceships/spaceships-viewer/pacts/output/spaceship-viewer-spaceships-service.json

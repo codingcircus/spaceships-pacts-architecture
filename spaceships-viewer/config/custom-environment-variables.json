@@ -1,0 +1,9 @@
+{
+  "services": {
+    "spaceships": "SPACESHIP_SERVICE"
+  },
+  "server": {
+    "port": "PORT",
+    "host": "HOST"
+  }
+}

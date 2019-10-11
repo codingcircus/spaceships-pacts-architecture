@@ -1,0 +1,15 @@
+html
+  head
+    title Spaceships Viewer
+    link(rel='stylesheet', href='/public/styles.css')
+  body
+    header.mainHeader
+      h1 Welcome to the spaceships viewer
+    ul.spaceships
+      each spaceship in spaceships
+        li.spaceship
+          header.spaceship__header
+            h2.spaceship__heading= spaceship.name
+            p.spaceship__meta= spaceship.size
+          div.spaceship__content
+            p= spaceship.description

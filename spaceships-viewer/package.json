@@ -1,0 +1,34 @@
+{
+  "name": "spaceships-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "test": "NODE_ENV=test jasmine ./routes/common/handlers.spec.js",
+    "pacts:publish": "node ./pacts/publish.js"
+  },
+  "keywords": [
+    "node",
+    "pug"
+  ],
+  "author": "Daniel Stein",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.2.2",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.1.1",
+    "jasmine": "^3.5.0",
+    "jest": "^24.9.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2",
+    "@pact-foundation/pact-node": "^9.0.4",
+    "branch-name": "^1.0.0",
+    "nodegit": "^0.26.1"
+  }
+}
