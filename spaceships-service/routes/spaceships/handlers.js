@@ -21,7 +21,7 @@ function postSpaceship(req, res) {
 }
 
 function getSpaceships(req, res) {
-  return res.json(spaceships.getPaginatedItems());
+  return res.json(spaceships.getItems());
 }
 
 module.exports = {

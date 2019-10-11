@@ -33,7 +33,7 @@ describe('Create Pacts for spaceships-service', () => {
     it('can get data about at least one spaceship', async () => {
       const req = {};
       await getSpaceships(req, {}, () => {});
-      expect(req.getSpaceshipsResult.page).toEqual(1);
+      expect(req.getSpaceshipsResult[0].id).toEqual(1);
     });
   })
 
