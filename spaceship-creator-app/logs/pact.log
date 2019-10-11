@@ -1,0 +1,171 @@
+I, [2019-10-10T19:27:58.287620 #6981]  INFO -- : Registered expected interaction POST /spaceships
+I, [2019-10-10T19:27:58.289868 #6981]  INFO -- : Received request GET /spaceships
+I, [2019-10-10T19:27:58.291958 #6981]  INFO -- : Registered expected interaction GET /spaceships
+D, [2019-10-10T19:27:58.292397 #6981] DEBUG -- : {
+  "description": "a request to add a new spaceship",
+  "request": {
+    "method": "POST",
+    "path": "/spaceships",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "A Spaceship"
+      },
+      "description": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "to infinity and beyond"
+      },
+      "size": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "small",
+          "matcher": {"json_class":"Regexp","o":0,"s":"small|medium|large"}
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      },
+      "name": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "A Spaceship"
+      },
+      "description": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "A Spaceship"
+      },
+      "size": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "small",
+          "matcher": {"json_class":"Regexp","o":0,"s":"small|medium|large"}
+        }
+      }
+    }
+  }
+}
+D, [2019-10-10T19:27:58.292549 #6981] DEBUG -- : {
+  "path": "/spaceships",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+D, [2019-10-10T19:27:58.292678 #6981] DEBUG -- : {
+  "description": "a request to get all spaceships",
+  "providerState": "there is a spaceship with id 1 in the database",
+  "request": {
+    "method": "GET",
+    "path": "/spaceships",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "json_class": "Pact::ArrayLike",
+      "contents": {
+        "id": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 1
+        }
+      },
+      "min": 1
+    }
+  }
+}
+I, [2019-10-10T19:27:58.293429 #6981]  INFO -- : Found matching response for GET /spaceships
+D, [2019-10-10T19:27:58.293810 #6981] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "json_class": "Pact::ArrayLike",
+    "contents": {
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      }
+    },
+    "min": 1
+  }
+}
+I, [2019-10-10T19:27:58.308370 #6981]  INFO -- : Received request POST /spaceships
+D, [2019-10-10T19:27:58.308596 #6981] DEBUG -- : {
+  "path": "/spaceships",
+  "query": "",
+  "method": "post",
+  "body": {
+    "name": "new spaceship",
+    "description": "data about new spaceship",
+    "size": "medium"
+  },
+  "headers": {
+    "Content-Length": "81",
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2019-10-10T19:27:58.309012 #6981]  INFO -- : Found matching response for POST /spaceships
+D, [2019-10-10T19:27:58.309301 #6981] DEBUG -- : {
+  "status": 201,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "id": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 1
+    },
+    "name": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "A Spaceship"
+    },
+    "description": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "A Spaceship"
+    },
+    "size": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "small",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "small|medium|large"
+        }
+      }
+    }
+  }
+}
+I, [2019-10-10T19:27:58.315240 #6981]  INFO -- : Verifying - interactions matched
+I, [2019-10-10T19:27:58.320269 #6981]  INFO -- : Cleared interactions
+I, [2019-10-10T19:27:58.325379 #6981]  INFO -- : Writing pact for spaceships-service to /Users/danielstein/Sites/experiments/spaceships/spaceship-creator-app/pacts/output/spaceship-creator-app-spaceships-service.json

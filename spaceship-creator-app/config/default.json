@@ -1,0 +1,8 @@
+{
+  "services": {
+    "spaceships": "http://localhost:3001"
+  },
+  "pactTestOptions": {
+    "pactBrokerUrl": "http://pacts.spaceships.site/"
+  }
+}

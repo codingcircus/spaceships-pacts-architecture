@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+form {
+  margin: 20px auto 0;
+  padding: 20px;
+  background: rgb(0, 111, 155);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+}
+
+h1 {
+  font-size: 21px;
+  margin: 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  display: block;
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+input[type=text],
+button,
+textarea,
+select {
+  padding: 5px;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 3px;
+  height: 31px;
+  line-height: 21px;
+  font-size: 16px;
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, .2);
+}
+
+select {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+}
+
+.selectContainer {
+  position: relative;
+}
+
+.selectContainer::after {
+  content: '⌄';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 31px;
+  height: 31px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left: 1px solid rgba(0, 0, 0, .2);
+  background: deeppink;
+}
+
+textarea {
+  max-width: 100%;
+  height: 115px;
+}
+
+button {
+  width: auto;
+  padding: 5px 20px;
+  background-color: deeppink;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+}
+
+.toast {
+  border: 2px solid greenyellow;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  color: greenyellow;
+}
